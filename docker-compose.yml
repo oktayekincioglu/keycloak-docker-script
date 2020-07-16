@@ -1,0 +1,14 @@
+version: '2.0'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    ports:
+      - "8080:8080"
+    volumes: 
+      - ./data:/opt/kcinit
+    command: 
+      - "-b 0.0.0.0"
+    environment:
+      - KEYCLOAK_USER=admin 
+      - KEYCLOAK_PASSWORD=admin
+   
